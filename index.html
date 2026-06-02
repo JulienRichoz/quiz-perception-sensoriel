@@ -38,6 +38,20 @@
   .bloc-btn:hover{border-color:var(--accent2);color:var(--text);}
   .bloc-btn.active{background:var(--accent2);border-color:var(--accent2);color:#fff;}
 
+  /* Bouton examen blanc - état normal */
+  .bloc-btn.exam{
+    background:linear-gradient(135deg,rgba(232,197,71,0.15),rgba(232,197,71,0.04));
+    border-color:rgba(232,197,71,0.4);
+    color:var(--accent);
+  }
+  /* Bouton examen blanc - sélectionné (doit primer sur l'état normal) */
+  .bloc-btn.exam.active{
+    background:linear-gradient(135deg,var(--accent),#f0d060);
+    border-color:var(--accent);
+    color:#1a1928;
+    font-weight:700;
+  }
+
   /* PROGRESS */
   .progress-wrap{background:var(--surface2);border-radius:99px;height:5px;margin-bottom:32px;overflow:hidden;}
   .progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width 0.5s cubic-bezier(0.4,0,0.2,1);}
@@ -129,6 +143,7 @@
 
   <div class="filters" id="filters">
     <button class="bloc-btn active" data-bloc="all" onclick="filterBloc(this,'all')">🔀 Tous (aléatoire)</button>
+    <button class="bloc-btn exam" data-bloc="exam_random" onclick="filterBloc(this,'exam_random')">🎯 Examen blanc (20 aléatoires)</button>
   </div>
 
   <div class="progress-wrap"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
@@ -193,23 +208,6 @@ function filterBloc(btn, bloc) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-const EXAM_BLOC = 11; // groupe "Examen blanc"
-function applyFilter(bloc) {
-  let pool;
-  if (bloc === 'all') {
-    // "Tous (aléatoire)" : les 10 chapitres, hors examen blanc
-    pool = shuffle(QUESTIONS.filter(q => q.bloc !== EXAM_BLOC));
-  } else if (String(bloc) === String(EXAM_BLOC)) {
-    // Examen blanc : 30 questions, ordre aléatoire à chaque tentative
-    pool = shuffle(QUESTIONS.filter(q => String(q.bloc) === String(bloc)));
-  } else {
-    pool = QUESTIONS.filter(q => String(q.bloc) === String(bloc));
-  }
-  state.displayOrder = pool.map(q => q.id);
-  document.getElementById('barCount').textContent = pool.length;
-  render();
-}
-
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -218,6 +216,25 @@ function shuffle(arr) {
   }
   return a;
 }
+
+const EXAM_RANDOM = 'exam_random'; // bouton "examen blanc aléatoire" (pioche dans tout)
+const EXAM_SIZE = 20;
+function applyFilter(bloc) {
+  let pool;
+  if (bloc === 'all') {
+    pool = shuffle(QUESTIONS);
+  } else if (bloc === EXAM_RANDOM) {
+    // 20 questions tirées au hasard dans TOUT le pool (y compris bloc 11)
+    pool = shuffle(QUESTIONS).slice(0, EXAM_SIZE);
+  } else {
+    pool = QUESTIONS.filter(q => String(q.bloc) === String(bloc));
+  }
+  state.displayOrder = pool.map(q => q.id);
+  document.getElementById('barCount').textContent = pool.length;
+  render();
+}
+
+
 
 // ─── RENDER ──────────────────────────────────────────────────
 function render() {
