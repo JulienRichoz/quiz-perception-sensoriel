@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz v2 — Sensation & Perception</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0f0e17;--surface:#1a1928;--surface2:#232236;
+    --accent:#e8c547;--accent2:#7c6af7;--accent3:#4ecdc4;
+    --danger:#ff6b6b;--success:#51cf66;
+    --text:#fffffe;--text-muted:#a7a9be;
+    --border:rgba(255,255,255,0.08);--radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;}
+  body::before{content:'';position:fixed;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(124,106,247,0.12) 0%,transparent 70%);pointer-events:none;z-index:0;}
+  body::after{content:'';position:fixed;bottom:-200px;left:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(232,197,71,0.08) 0%,transparent 70%);pointer-events:none;z-index:0;}
+  .container{max-width:780px;margin:0 auto;padding:40px 24px 100px;position:relative;z-index:1;}
+
+  /* HEADER */
+  .header{text-align:center;margin-bottom:40px;}
+  .header .eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:12px;}
+  .header h1{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,42px);font-weight:900;line-height:1.1;}
+  .header h1 span{color:var(--accent);}
+  .header .subtitle{margin-top:12px;color:var(--text-muted);font-size:14px;}
+  .header .note{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:rgba(232,197,71,0.1);border:1px solid rgba(232,197,71,0.25);border-radius:99px;padding:5px 14px;font-size:12px;color:var(--accent);font-weight:500;}
+
+  /* SCORE */
+  .score-banner{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 22px;margin-bottom:28px;font-size:14px;color:var(--text-muted);flex-wrap:wrap;gap:8px;}
+  .score-val{font-family:'Playfair Display',serif;font-size:22px;color:var(--accent);font-weight:700;}
+  .pill{background:var(--surface2);border-radius:99px;padding:4px 12px;font-size:12px;font-weight:500;}
+
+  /* FILTERS */
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+  .bloc-btn{background:var(--surface);border:1px solid var(--border);border-radius:99px;padding:6px 16px;font-size:13px;font-weight:500;color:var(--text-muted);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
+  .bloc-btn:hover{border-color:var(--accent2);color:var(--text);}
+  .bloc-btn.active{background:var(--accent2);border-color:var(--accent2);color:#fff;}
+
+  /* PROGRESS */
+  .progress-wrap{background:var(--surface2);border-radius:99px;height:5px;margin-bottom:32px;overflow:hidden;}
+  .progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width 0.5s cubic-bezier(0.4,0,0.2,1);}
+
+  /* QUESTION CARD */
+  .q-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:18px;transition:border-color 0.3s;animation:fadeIn 0.35s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .q-card.answered-correct{border-color:var(--success);}
+  .q-card.answered-wrong{border-color:var(--danger);}
+  .q-card.answered-partial{border-color:var(--accent);}
+  .q-meta{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+  .q-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);}
+  .q-tag{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:rgba(124,106,247,0.15);color:var(--accent2);border-radius:99px;padding:2px 9px;}
+  .q-text{font-size:16px;font-weight:500;line-height:1.55;color:var(--text);margin-bottom:18px;}
+
+  /* OPTIONS */
+  .options{display:flex;flex-direction:column;gap:9px;}
+  .option{display:flex;align-items:flex-start;gap:12px;background:var(--surface2);border:1.5px solid transparent;border-radius:11px;padding:12px 16px;cursor:pointer;transition:all 0.16s;font-size:14px;color:var(--text-muted);text-align:left;width:100%;font-family:'DM Sans',sans-serif;line-height:1.5;}
+  .option:hover:not(:disabled){border-color:var(--accent2);color:var(--text);}
+  .opt-box{flex-shrink:0;width:20px;height:20px;border-radius:5px;background:var(--bg);border:1.5px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:10px;margin-top:2px;transition:all 0.16s;}
+  .option.selected{border-color:var(--accent2);background:rgba(124,106,247,0.1);color:var(--text);}
+  .option.selected .opt-box{background:var(--accent2);border-color:var(--accent2);}
+  .option.selected .opt-box::after{content:'✓';color:#fff;font-weight:700;}
+  .option.correct{border-color:var(--success);background:rgba(81,207,102,0.1);color:var(--text);}
+  .option.correct .opt-box{background:var(--success);border-color:var(--success);}
+  .option.correct .opt-box::after{content:'✓';color:#fff;font-weight:700;}
+  .option.wrong{border-color:var(--danger);background:rgba(255,107,107,0.07);color:var(--text-muted);}
+  .option.wrong .opt-box{background:var(--danger);border-color:var(--danger);}
+  .option.wrong .opt-box::after{content:'✗';color:#fff;font-weight:700;}
+  .option.missed{border-color:rgba(232,197,71,0.4);background:rgba(232,197,71,0.05);color:var(--text-muted);}
+  .option.missed .opt-box{background:rgba(232,197,71,0.25);border-color:var(--accent);}
+  .option.missed .opt-box::after{content:'!';color:var(--accent);font-weight:700;}
+  .option:disabled{cursor:default;}
+
+  /* FEEDBACK */
+  .feedback{margin-top:14px;padding:12px 16px;border-radius:9px;font-size:13px;line-height:1.6;display:none;}
+  .feedback.show{display:block;animation:fadeIn 0.3s ease;}
+  .feedback.fb-ok{background:rgba(81,207,102,0.1);border:1px solid rgba(81,207,102,0.3);color:#a8f0b3;}
+  .feedback.fb-ko{background:rgba(255,107,107,0.07);border:1px solid rgba(255,107,107,0.25);color:#ffb3b3;}
+  .feedback.fb-partial{background:rgba(232,197,71,0.07);border:1px solid rgba(232,197,71,0.25);color:#f5e0a0;}
+  .feedback strong{color:var(--text);display:block;margin-bottom:3px;}
+
+  /* VALIDATE BTN */
+  .validate-btn{margin-top:16px;background:linear-gradient(135deg,var(--accent2),#9b8af9);color:#fff;border:none;border-radius:9px;padding:10px 24px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity 0.2s,transform 0.1s;display:none;}
+  .validate-btn:hover{opacity:0.9;transform:translateY(-1px);}
+  .validate-btn.show{display:inline-block;}
+
+  /* RESULTS */
+  .results{display:none;text-align:center;padding:44px 28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-top:28px;animation:fadeIn 0.5s ease;}
+  .results.show{display:block;}
+  .results .big-score{font-family:'Playfair Display',serif;font-size:68px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:6px;}
+  .results .res-label{font-size:18px;color:var(--text-muted);margin-bottom:20px;}
+  .results .res-msg{font-size:15px;color:var(--text-muted);max-width:400px;margin:0 auto 28px;line-height:1.6;}
+  .restart-btn{background:var(--surface2);border:1.5px solid var(--border);border-radius:9px;padding:10px 24px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+  .restart-btn:hover{border-color:var(--accent2);}
+
+  /* EMPTY */
+  .empty{text-align:center;padding:56px 28px;color:var(--text-muted);font-size:14px;background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);}
+
+  /* BOTTOM BAR */
+  .start-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(15,14,23,0.95);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;z-index:100;transition:transform 0.3s;}
+  .start-bar.hidden{transform:translateY(100%);}
+  .bar-info{font-size:13px;color:var(--text-muted);}
+  .bar-info strong{color:var(--text);}
+  .start-btn{background:linear-gradient(135deg,var(--accent),#f0d060);color:var(--bg);border:none;border-radius:9px;padding:10px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity 0.2s,transform 0.1s;}
+  .start-btn:hover{opacity:0.9;transform:translateY(-1px);}
+  .blurred{filter:blur(5px);pointer-events:none;user-select:none;}
+
+  @media(max-width:600px){
+    .q-card{padding:20px 16px;}
+    .q-text{font-size:15px;}
+    .option{font-size:13px;padding:10px 13px;}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="eyebrow">Éric Laurent - Université de Fribourg</div>
+    <h1>Sensation &amp; <span>Perception</span> — v2</h1>
+    <div class="subtitle">156 QCM (10 chapitres) + 📝 Examen blanc de 30 Q · 1 pt si réponse parfaite, 0 sinon</div>
+    <div class="note">⚠️ Entre 1 et 4 bonnes réponses possibles par question</div>
+  </div>
+
+  <div class="score-banner">
+    <div>Score&nbsp;: <span class="score-val" id="scoreVal">0 / 0</span></div>
+    <span class="pill" id="answeredPill">0 répondue(s)</span>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="bloc-btn active" data-bloc="all" onclick="filterBloc(this,'all')">🔀 Tous (aléatoire)</button>
+  </div>
+
+  <div class="progress-wrap"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+
+  <div id="qContainer"></div>
+
+  <div class="results" id="results">
+    <div class="big-score" id="bigScore">—</div>
+    <div class="res-label" id="resLabel">—</div>
+    <div class="res-msg" id="resMsg">—</div>
+    <button class="restart-btn" onclick="restart()">🔄 Recommencer</button>
+  </div>
+</div>
+
+<div class="start-bar" id="startBar">
+  <div class="bar-info"><strong id="barCount">0</strong> question(s)</div>
+  <button class="start-btn" onclick="startQuiz()">Lancer →</button>
+</div>
+
+<script src="questions_v2.js"></script>
+<script>
+// ─── STATE ───────────────────────────────────────────────────
+let state = {
+  activeBloc: 'all',
+  displayOrder: [],   // shuffled ids for current filter
+  selections: {},     // { qId: Set }
+  revealed: {},       // { qId: true }
+  started: false,
+};
+
+// ─── INIT ────────────────────────────────────────────────────
+function init() {
+  buildFilters();
+  applyFilter('all');
+}
+
+function buildFilters() {
+  const wrap = document.getElementById('filters');
+  const blocs = [...new Set(QUESTIONS.map(q => q.bloc))].sort((a,b) => a-b);
+  blocs.forEach(b => {
+    const label = QUESTIONS.find(q => q.bloc === b).blocLabel;
+    const btn = document.createElement('button');
+    btn.className = 'bloc-btn';
+    btn.dataset.bloc = b;
+    btn.textContent = label;
+    btn.onclick = () => filterBloc(btn, b);
+    wrap.appendChild(btn);
+  });
+}
+
+function filterBloc(btn, bloc) {
+  document.querySelectorAll('.bloc-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  state.activeBloc = bloc;
+  state.selections = {};
+  state.revealed = {};
+  state.started = false;
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('startBar').classList.remove('hidden');
+  applyFilter(bloc);
+  updateScore();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+const EXAM_BLOC = 11; // groupe "Examen blanc"
+function applyFilter(bloc) {
+  let pool;
+  if (bloc === 'all') {
+    // "Tous (aléatoire)" : les 10 chapitres, hors examen blanc
+    pool = shuffle(QUESTIONS.filter(q => q.bloc !== EXAM_BLOC));
+  } else if (String(bloc) === String(EXAM_BLOC)) {
+    // Examen blanc : 30 questions, ordre aléatoire à chaque tentative
+    pool = shuffle(QUESTIONS.filter(q => String(q.bloc) === String(bloc)));
+  } else {
+    pool = QUESTIONS.filter(q => String(q.bloc) === String(bloc));
+  }
+  state.displayOrder = pool.map(q => q.id);
+  document.getElementById('barCount').textContent = pool.length;
+  render();
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ─── RENDER ──────────────────────────────────────────────────
+function render() {
+  const container = document.getElementById('qContainer');
+  const ids = state.displayOrder;
+  if (!ids.length) {
+    container.innerHTML = '<div class="empty">Aucune question pour ce bloc pour l\'instant.</div>';
+    return;
+  }
+  container.innerHTML = '';
+  ids.forEach((qId, idx) => {
+    const q = QUESTIONS.find(q => q.id === qId);
+    const sel = state.selections[qId] || new Set();
+    const revealed = !!state.revealed[qId];
+
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = `card-${qId}`;
+    if (!state.started) card.classList.add('blurred');
+    if (revealed) {
+      card.classList.remove('blurred');
+      const selArr = [...sel];
+      const perfect = selArr.length === q.correct.length && selArr.every(i => q.correct.includes(i));
+      const any = selArr.some(i => q.correct.includes(i));
+      card.classList.add(perfect ? 'answered-correct' : any ? 'answered-partial' : 'answered-wrong');
+    }
+
+    const letters = ['A','B','C','D'];
+    const opts = q.options.map((opt, i) => {
+      let cls = 'option';
+      if (revealed) {
+        const was = sel.has(i), isOk = q.correct.includes(i);
+        if (isOk && was) cls += ' correct';
+        else if (isOk && !was) cls += ' missed';
+        else if (!isOk && was) cls += ' wrong';
+      } else if (sel.has(i)) cls += ' selected';
+      return `<button class="${cls}" onclick="toggle(${qId},${i})" ${revealed?'disabled':''}>
+        <span class="opt-box"></span>
+        <span><strong style="color:var(--text-muted);margin-right:7px">${letters[i]}.</strong>${opt}</span>
+      </button>`;
+    }).join('');
+
+    let fbCls = 'feedback', fbIcon = '';
+    if (revealed) {
+      const selArr = [...sel];
+      const perfect = selArr.length === q.correct.length && selArr.every(i => q.correct.includes(i));
+      const any = selArr.some(i => q.correct.includes(i));
+      fbCls = `feedback ${perfect?'fb-ok':any?'fb-partial':'fb-ko'} show`;
+      fbIcon = perfect ? '✓ Correct — ' : any ? '~ Partiel (0 pt) — ' : '✗ Incorrect — ';
+    }
+
+    const hasSel = sel.size > 0;
+    card.innerHTML = `
+      <div class="q-meta">
+        <span class="q-num">Q${idx+1}</span>
+        <span class="q-tag">${q.blocLabel}</span>
+      </div>
+      <div class="q-text">${q.text}</div>
+      <div class="options">${opts}</div>
+      <div class="${fbCls}" id="fb-${qId}"><strong>${fbIcon}</strong>${q.feedback}</div>
+      <button class="validate-btn ${!revealed && hasSel ? 'show' : ''}" id="val-${qId}" onclick="validate(${qId})">Valider →</button>`;
+    container.appendChild(card);
+  });
+  updateScore();
+  updateProgress();
+}
+
+// ─── INTERACTIONS ────────────────────────────────────────────
+function toggle(qId, i) {
+  if (state.revealed[qId]) return;
+  if (!state.selections[qId]) state.selections[qId] = new Set();
+  const sel = state.selections[qId];
+  sel.has(i) ? sel.delete(i) : sel.add(i);
+  const card = document.getElementById(`card-${qId}`);
+  card.querySelectorAll('.option').forEach((b, j) => {
+    b.classList.toggle('selected', sel.has(j));
+  });
+  const val = document.getElementById(`val-${qId}`);
+  if (val) val.classList.toggle('show', sel.size > 0);
+}
+
+function validate(qId) {
+  if (state.revealed[qId]) return;
+  const sel = state.selections[qId] || new Set();
+  if (!sel.size) return;
+  state.revealed[qId] = true;
+
+  const q = QUESTIONS.find(q => q.id === qId);
+  const card = document.getElementById(`card-${qId}`);
+  const selArr = [...sel];
+  const perfect = selArr.length === q.correct.length && selArr.every(i => q.correct.includes(i));
+  const any = selArr.some(i => q.correct.includes(i));
+
+  card.classList.remove('answered-correct','answered-wrong','answered-partial');
+  card.classList.add(perfect ? 'answered-correct' : any ? 'answered-partial' : 'answered-wrong');
+
+  card.querySelectorAll('.option').forEach((btn, i) => {
+    btn.disabled = true;
+    btn.classList.remove('selected');
+    const was = sel.has(i), ok = q.correct.includes(i);
+    if (ok && was) btn.classList.add('correct');
+    else if (ok && !was) btn.classList.add('missed');
+    else if (!ok && was) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById(`fb-${qId}`);
+  const icon = perfect ? '✓ Correct — ' : any ? '~ Partiel (0 pt) — ' : '✗ Incorrect — ';
+  const cls = `feedback ${perfect?'fb-ok':any?'fb-partial':'fb-ko'} show`;
+  fb.innerHTML = `<strong>${icon}</strong>${q.feedback}`;
+  fb.className = cls;
+
+  const val = document.getElementById(`val-${qId}`);
+  if (val) val.style.display = 'none';
+
+  updateScore();
+  updateProgress();
+  checkDone();
+}
+
+function startQuiz() {
+  state.started = true;
+  document.getElementById('startBar').classList.add('hidden');
+  document.querySelectorAll('.q-card').forEach(c => c.classList.remove('blurred'));
+  document.querySelector('.q-card')?.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function restart() {
+  state.selections = {};
+  state.revealed = {};
+  state.started = false;
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('startBar').classList.remove('hidden');
+  // Re-tire / ré-mélange selon le filtre actif (aléatoire pour "Tous" et "Examen")
+  applyFilter(state.activeBloc);
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+// ─── SCORE & PROGRESS ────────────────────────────────────────
+function updateScore() {
+  const ids = state.displayOrder;
+  const answered = ids.filter(id => state.revealed[id]);
+  const correct = answered.filter(id => {
+    const q = QUESTIONS.find(q => q.id === id);
+    const sel = [...(state.selections[id] || new Set())];
+    return sel.length === q.correct.length && sel.every(i => q.correct.includes(i));
+  });
+  document.getElementById('scoreVal').textContent = `${correct.length} / ${ids.length}`;
+  document.getElementById('answeredPill').textContent = `${answered.length} répondue(s)`;
+}
+
+function updateProgress() {
+  const ids = state.displayOrder;
+  const pct = ids.length ? (ids.filter(id => state.revealed[id]).length / ids.length) * 100 : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function checkDone() {
+  const ids = state.displayOrder;
+  if (!ids.length || !ids.every(id => state.revealed[id])) return;
+  const correct = ids.filter(id => {
+    const q = QUESTIONS.find(q => q.id === id);
+    const sel = [...(state.selections[id] || new Set())];
+    return sel.length === q.correct.length && sel.every(i => q.correct.includes(i));
+  }).length;
+  const pct = Math.round((correct / ids.length) * 100);
+  const panel = document.getElementById('results');
+  panel.classList.add('show');
+  document.getElementById('bigScore').textContent = `${correct}/${ids.length}`;
+  document.getElementById('resLabel').textContent = `${pct}% de réussite`;
+  document.getElementById('resMsg').textContent =
+    pct >= 90 ? '🏆 Excellent ! Tu maîtrises ce bloc.' :
+    pct >= 70 ? '💪 Bon travail ! Relis les feedbacks des questions ratées.' :
+    pct >= 50 ? '📚 Des lacunes — reprends la fiche de synthèse.' :
+                '🔄 Ce bloc nécessite plus de travail.';
+  panel.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+init();
+</script>
+</body>
+</html>
