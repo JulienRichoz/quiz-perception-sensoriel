@@ -20,7 +20,7 @@ const QUESTIONS = [
       "Il a publié les Elemente der Psychophysik en 1860",
       "Il a été professeur de philosophie et de psychologie expérimentale à Leipzig",
       "Il a proposé le terme « psychophysique »",
-      "Il a été assistant de physiologie de Hermann von Helmholtz (1858-1863)"
+      "Il a été assistant de physiologie de Hermann von Helmholtz"
     ],
     correct: [3, 1],
     feedback: "Wundt : assistant d'Helmholtz, puis professeur à Leipzig. C'est FECHNER qui a proposé le terme « psychophysique » et publié les Elemente der Psychophysik (1860)."
@@ -41,7 +41,7 @@ const QUESTIONS = [
     id: 4, bloc: 1, blocLabel: "1 — Place en psychologie",
     text: "Que postule la théorie trichromatique de Young-Helmholtz ?",
     options: [
-      "L'œil humain est contraint par un triple codage (type « RGB »)",
+      "L'œil humain est contraint par un triple codage",
       "Deux types de récepteurs suffisent pour coder toutes les couleurs",
       "La théorie porte sur les sensations auditives",
       "Au moins 5 primaires sont nécessaires pour optimiser le rendu coloré"
@@ -80,7 +80,7 @@ const QUESTIONS = [
       "Non — mais seuls les grands singes y sont sensibles en dehors de l'humain",
       "Oui — elle nécessite un cortex humain développé",
       "Oui — elle repose sur des apprentissages culturels propres à l'humain",
-      "Non — des poussins de 4 jours (Rosa Salva et al., 2013) y sont également sensibles"
+      "Non — des poussins de 4 jours y sont également sensibles"
     ],
     correct: [3],
     feedback: "Rosa Salva et al. (2013) : des poussins de 4 jours (Gallus gallus) sont sensibles à l'illusion d'Ebbinghaus → les effets de contexte ne sont ni purement culturels ni propres à l'humain."
@@ -102,7 +102,7 @@ const QUESTIONS = [
     text: "Associez correctement les contributions à leurs auteurs.",
     options: [
       "Fechner → invention du terme « psychophysique » et Elemente der Psychophysik (1860)",
-      "Wundt → fondation du premier laboratoire de psychologie (Leipzig, 1879)",
+      "Wundt → fondation du premier laboratoire de psychologie",
       "Wundt → invention du terme « psychophysique »",
       "Helmholtz → fondation du premier laboratoire de psychologie expérimentale"
     ],
@@ -223,10 +223,10 @@ const QUESTIONS = [
     id: 19, bloc: 2, blocLabel: "2 — Définitions & psychophysique",
     text: "Quelles correspondances entre grandeur physique et dimension sensorielle sont correctes ?",
     options: [
-      "Intensité/luminance lumineuse → luminosité (sombre, clair)",
+      "Intensité/luminance lumineuse → luminosité",
       "Intensité sonore (dB) → teinte colorée",
-      "Longueur d'onde lumineuse → sonie (volume perçu)",
-      "Fréquence sonore (Hz) → hauteur tonale (grave, aigu)"
+      "Longueur d'onde lumineuse → sonie",
+      "Fréquence sonore (Hz) → hauteur tonale"
     ],
     correct: [0, 3],
     feedback: "Luminance → luminosité ; fréquence (Hz) → hauteur tonale. La longueur d'onde → teinte (chromaticité), pas la sonie ; l'intensité sonore (dB) → sonie, pas la teinte."
@@ -271,7 +271,7 @@ const QUESTIONS = [
     id: 23, bloc: 2, blocLabel: "2 — Définitions & psychophysique",
     text: "Quel est le principal inconvénient de la méthode des limites ?",
     options: [
-      "Les effets d'attente (persévération, effets d'ordre) car le participant peut anticiper",
+      "Les effets d'attente car le participant peut anticiper",
       "Elle ne permet jamais de déterminer un seuil",
       "Les stimuli sont présentés de façon totalement aléatoire",
       "Le participant contrôle lui-même l'intensité du stimulus"
@@ -286,7 +286,7 @@ const QUESTIONS = [
       "C'est une courbe du pourcentage de détection en fonction de l'intensité",
       "Le seuil absolu s'y lit conventionnellement à 50 % de détection",
       "Sa forme en S prouve l'existence d'un seuil strict en dessous duquel rien n'est détecté",
-      "Elle a typiquement une forme d'ogive (≈ sigmoïde en S)"
+      "Elle a typiquement une forme d'ogive"
     ],
     correct: [0, 3, 1],
     feedback: "Fonction psychométrique = ogive (% détection / intensité), seuil lu à 50 %. La forme en S reflète la variabilité de la détection : il n'existe pas de « seuil idéal » strict."
@@ -298,7 +298,7 @@ const QUESTIONS = [
       "La constante k est universelle et identique pour toutes les modalités",
       "Le ΔI nécessaire est indépendant de l'intensité de départ",
       "Plus le stimulus standard est intense, plus le ΔI nécessaire pour percevoir une différence est grand",
-      "ΔI / I₀ = k (constante) : le seuil différentiel dépend d'une fraction de l'intensité initiale"
+      "ΔI / I₀ = k : le seuil différentiel dépend d'une fraction de l'intensité initiale"
     ],
     correct: [3, 2],
     feedback: "Weber : k = ΔI/I₀ (constante < 1). Plus le standard est fort, plus le ΔI requis est grand. Mais k varie selon la modalité sensorielle — elle n'est pas universelle."
@@ -309,7 +309,7 @@ const QUESTIONS = [
     options: [
       "La magnitude de la sensation croît comme le logarithme de l'intensité du stimulus",
       "La sensation croît linéairement avec l'intensité physique",
-      "Elle s'appuie sur l'assemblage des JND (calculées via la fraction de Weber)",
+      "Elle s'appuie sur l'assemblage des JND",
       "Il y a « compression » de la sensation aux fortes intensités"
     ],
     correct: [0, 3, 2],
@@ -334,7 +334,7 @@ const QUESTIONS = [
       "Même en l'absence de stimulus externe (δ = 0), la sensation n'est pas nulle",
       "c est la constante de Weber ΔI/I₀",
       "δ représente le niveau de bruit externe environnemental",
-      "c = niveau intrinsèque d'activité résiduelle de l'organe sensoriel (≈ un « bruit » interne)"
+      "c = niveau intrinsèque d'activité résiduelle de l'organe sensoriel"
     ],
     correct: [3, 0],
     feedback: "c = activité résiduelle interne (bruit de fond biologique) ; δ = intensité du stimulus. Si δ = 0, la sensation dépend encore de c → préfigure la notion de bruit interne de la TDS."
@@ -355,7 +355,7 @@ const QUESTIONS = [
     id: 30, bloc: 2, blocLabel: "2 — Définitions & psychophysique",
     text: "D'après les données d'estimation de magnitude (exposants 3.5, 1.0, 0.8, 0.3), lesquelles sont correctes ?",
     options: [
-      "Les chocs électriques ont un exposant > 1 (≈ 3.5) : sensation amplifiée (expansion)",
+      "Les chocs électriques ont un exposant > 1 (≈ 3.5) : sensation amplifiée",
       "La luminosité a un exposant faible (≈ 0.3) : forte compression",
       "La loi de Fechner s'applique parfaitement aux chocs électriques",
       "Un exposant > 1 signifie une compression de la sensation"
@@ -367,10 +367,10 @@ const QUESTIONS = [
     id: 31, bloc: 2, blocLabel: "2 — Définitions & psychophysique",
     text: "Quelles procédures Stevens (et Plateau) ont-ils développées pour mesurer la magnitude des sensations ?",
     options: [
-      "La production de magnitude (régler I pour obtenir un multiple, ex. × 2)",
+      "La production de magnitude",
       "La méthode des limites ascendantes",
-      "La mise en correspondance intermodale (égaler une intensité d'une modalité à une autre)",
-      "L'estimation directe de magnitude (attribuer une valeur à chaque stimulus)"
+      "La mise en correspondance intermodale",
+      "L'estimation directe de magnitude"
     ],
     correct: [3, 0, 2],
     feedback: "Estimation directe, production de magnitude et mise en correspondance intermodale (« tournez le bouton jusqu'à ce que ce son soit aussi fort que cette lumière est lumineuse »). La méthode des limites concerne les seuils, pas la magnitude."
@@ -380,7 +380,7 @@ const QUESTIONS = [
     text: "Que stipule la loi de Ricco ?",
     options: [
       "I × Durée = constante pour la détection",
-      "Pour de petites surfaces, I × Surface = constante (intensité et surface s'échangent)",
+      "Pour de petites surfaces, I × Surface = constante",
       "La teinte perçue change avec l'énergie lumineuse",
       "Elle s'applique sans aucune limite de taille de surface"
     ],
@@ -391,7 +391,7 @@ const QUESTIONS = [
     id: 33, bloc: 2, blocLabel: "2 — Définitions & psychophysique",
     text: "Comment s'appelle la surface au-delà de laquelle la loi de Ricco cesse de s'appliquer ?",
     options: [
-      "L'aire de Ricco (ou aire de sommation)",
+      "L'aire de Ricco",
       "La fovéa",
       "L'aire de Bloch",
       "La fraction de Weber"
@@ -417,7 +417,7 @@ const QUESTIONS = [
     options: [
       "La teinte perçue est totalement indépendante de l'intensité",
       "Quand l'énergie lumineuse augmente, les violets paraissent plus bleus",
-      "Il existe un équivalent auditif (aigus plus aigus, graves plus graves à fort volume)",
+      "Il existe un équivalent auditif",
       "Quand l'énergie lumineuse augmente, les rouges paraissent plus jaunes"
     ],
     correct: [3, 1, 2],
@@ -428,7 +428,7 @@ const QUESTIONS = [
     text: "D'où provient historiquement la théorie de la détection du signal (TDS) ?",
     options: [
       "De la philosophie sensualiste de Condillac",
-      "De la détection radar (Marcum) et des sciences computationnelles (Peterson et al.)",
+      "De la détection radar (Marcum) et des sciences computationnelles",
       "Des expériences de Weber sur la comparaison de poids",
       "Des travaux de Fechner sur les seuils différentiels"
     ],
@@ -439,7 +439,7 @@ const QUESTIONS = [
     id: 37, bloc: 2, blocLabel: "2 — Définitions & psychophysique",
     text: "En quoi la TDS marque-t-elle une bascule vers la « psychophysique moderne » ?",
     options: [
-      "Elle prend en compte les essais sans stimulus (rejets corrects, fausses alarmes)",
+      "Elle prend en compte les essais sans stimulus",
       "Elle a été proposée par Fechner comme prolongement direct de sa loi",
       "Elle introduit la notion de détectabilité d'un signal dans un ensemble signal + bruit",
       "Elle présente toujours plusieurs intensités de stimulation par essai"
@@ -463,7 +463,7 @@ const QUESTIONS = [
     id: 39, bloc: 2, blocLabel: "2 — Définitions & psychophysique",
     text: "Quelles sont les deux sources de « bruit » identifiées par la TDS ?",
     options: [
-      "Le bruit externe lié à la stimulation (parasites, ligne téléphonique…)",
+      "Le bruit externe lié à la stimulation",
       "Le critère de décision fixé par l'observateur",
       "L'activité nerveuse résiduelle interne, présente même sans stimulus",
       "Le nombre d'options de réponse proposées"
@@ -478,7 +478,7 @@ const QUESTIONS = [
       "Une mesure indépendante du critère de décision",
       "Quand d' = 0, les distributions se superposent et la performance est au niveau du hasard",
       "Le seuil interne librement fixé par l'observateur",
-      "La sensibilité : d' = D/σ (distance entre les distributions bruit et signal+bruit, rapportée à l'écart-type)"
+      "La sensibilité : d' = D/σ"
     ],
     correct: [3, 0, 1],
     feedback: "d' = D/σ = sensibilité PURE (indépendante du critère). d' = 0 → distributions confondues → performance au hasard. Le seuil interne librement fixé = critère β, pas d'."
@@ -487,7 +487,7 @@ const QUESTIONS = [
     id: 41, bloc: 2, blocLabel: "2 — Définitions & psychophysique",
     text: "Qu'est-ce que le critère de décision (β) ?",
     options: [
-      "La distance entre les deux distributions (bruit et signal+bruit)",
+      "La distance entre les deux distributions",
       "Une mesure de la sensibilité sensorielle pure",
       "Le nombre de fausses alarmes divisé par le nombre de HITs",
       "Un seuil interne fixé par l'observateur : au-dessus il répond « oui », en dessous « non »"
@@ -526,7 +526,7 @@ const QUESTIONS = [
       "La courbe ROC trace les HITs en fonction des fausses alarmes pour différents critères",
       "Deux observateurs de critères différents mais de même sensibilité ont des courbes ROC différentes",
       "Plus la courbe est bombée vers le coin haut-gauche, plus d' est élevé",
-      "La diagonale correspond à d' = 0 (réponses au niveau du hasard)"
+      "La diagonale correspond à d' = 0"
     ],
     correct: [1],
     feedback: "FAUX : deux observateurs de MÊME sensibilité (d' identique) partagent la MÊME courbe ROC, même si leurs critères diffèrent (ils occupent des points différents de la même courbe). Les trois autres énoncés sont exacts."
@@ -588,7 +588,7 @@ const QUESTIONS = [
       "200 à 400 nm",
       "700 à 1100 nm",
       "10 à 100 nm",
-      "400 à 700 nm (sachant que 1 nm = 10⁻⁹ m)"
+      "400 à 700 nm"
     ],
     correct: [3],
     feedback: "Le spectre visible s'étend de ~400 nm (violet/bleu) à ~700 nm (rouge). Rappel : 1 nm = 10⁻⁹ m."
@@ -612,7 +612,7 @@ const QUESTIONS = [
       "Les bâtonnets permettent la discrimination des couleurs",
       "Le système photopique (cônes) assure la vision diurne, détaillée et colorée",
       "Les cônes sont absents de la fovéa",
-      "Le système scotopique (bâtonnets) assure la vision nocturne, peu précise et non colorée"
+      "Le système scotopique assure la vision nocturne, peu précise et non colorée"
     ],
     correct: [1, 3],
     feedback: "Photopique = cônes (jour, détails, couleur, max à la fovéa) ; scotopique = bâtonnets (nuit, imprécis, non coloré, câblage convergent). Ce sont les BÂTONNETS qui sont absents de la fovéa, et les CÔNES qui codent la couleur."
@@ -645,10 +645,10 @@ const QUESTIONS = [
     id: 54, bloc: 3, blocLabel: "3 — Fondements biologiques",
     text: "Quelles correspondances pigment ↔ longueur d'onde sont correctes ?",
     options: [
-      "Érythrolabe → grandes longueurs d'onde (rouge, cônes L)",
+      "Érythrolabe → grandes longueurs d'onde",
       "Chlorolabe → grandes longueurs d'onde (rouge)",
       "Rhodopsine → permet de distinguer finement les couleurs",
-      "Cyanolabe → courtes longueurs d'onde (bleu, cônes S)"
+      "Cyanolabe → courtes longueurs d'onde"
     ],
     correct: [0, 3],
     feedback: "Érythrolabe = grandes λ (L/rouge), chlorolabe = moyennes λ (M/vert), cyanolabe = courtes λ (S/bleu). La rhodopsine (bâtonnets) ne distingue pas les couleurs (un seul pigment)."
@@ -658,7 +658,7 @@ const QUESTIONS = [
     text: "Quelles erreurs réfractives sont correctement décrites ?",
     options: [
       "Myopie : l'image se forme en avant de la rétine",
-      "Astigmatisme : cornée à courbures inégales (en « ballon de rugby »)",
+      "Astigmatisme : cornée à courbures inégales",
       "Hypermétropie : cornée parfaitement sphérique sans aucun défaut",
       "Presbytie : chute de l'amplitude d'accommodation avec l'âge"
     ],
@@ -684,7 +684,7 @@ const QUESTIONS = [
       "La pupille, au centre de l'iris, change de taille selon l'éclairement",
       "La pupille réalise la transduction de la lumière",
       "L'accommodation se fait par déformation de la cornée",
-      "L'accommodation modifie la puissance du cristallin (via le muscle ciliaire)"
+      "L'accommodation modifie la puissance du cristallin"
     ],
     correct: [3, 0],
     feedback: "Accommodation = renflement du cristallin lors de la contraction du muscle ciliaire (relâchement des zonules). La pupille (ouverture de l'iris) régule la quantité de lumière. La transduction se fait dans les photorécepteurs, pas la pupille."
@@ -705,9 +705,9 @@ const QUESTIONS = [
     id: 59, bloc: 3, blocLabel: "3 — Fondements biologiques",
     text: "Combien de muscles extra-oculaires meuvent chaque œil ?",
     options: [
-      "Douze muscles (6 paires)",
-      "Six muscles (3 paires)",
-      "Quatre muscles (2 paires)",
+      "Douze muscles",
+      "Six muscles",
+      "Quatre muscles",
       "Deux muscles (1 paire)"
     ],
     correct: [1],
@@ -720,7 +720,7 @@ const QUESTIONS = [
       "La vergence sert à stabiliser le regard pendant les mouvements de la tête",
       "Le réflexe vestibulo-oculaire et le système optocinétique stabilisent le regard",
       "Les saccades changent la direction du regard par rapport au monde extérieur",
-      "La vergence repose sur un signal différent pour chaque œil (loi de Hering)"
+      "La vergence repose sur un signal différent pour chaque œil"
     ],
     correct: [1, 2, 3],
     feedback: "Stabilisation = vestibulo-oculaire + optocinétique. Saccades = direction (vs monde). Vergence = alignement d'un œil vs l'autre (signal différent par œil, loi de Hering sur l'innervation inégale). La vergence n'est pas un mécanisme de stabilisation."
@@ -732,7 +732,7 @@ const QUESTIONS = [
       "Les couches 1-2 sont magnocellulaires ; les couches 3-6 sont parvocellulaires",
       "Il est situé dans le thalamus et comporte 6 couches",
       "Il est situé dans le lobe temporal",
-      "Les couches 1-2 sont parvocellulaires (couleur, détails fins)"
+      "Les couches 1-2 sont parvocellulaires"
     ],
     correct: [1, 0],
     feedback: "CGL = relais thalamique à 6 couches : 1-2 magnocellulaires (grandes cellules → mouvement/contraste), 3-6 parvocellulaires (petites → couleur/détails fins). C inverse les couches ; D se trompe de localisation."
@@ -741,8 +741,8 @@ const QUESTIONS = [
     id: 62, bloc: 3, blocLabel: "3 — Fondements biologiques",
     text: "Concernant les voies visuelles ventrale et dorsale, quelles affirmations sont correctes ?",
     options: [
-      "La voie ventrale (vers le lobe temporal) sert à la reconnaissance des objets (« quoi »)",
-      "La voie dorsale (vers le lobe pariétal) traite les relations spatiales et le guidage (« où/comment »)",
+      "La voie ventrale sert à la reconnaissance des objets",
+      "La voie dorsale traite les relations spatiales et le guidage",
       "Les deux voies partent du cortex visuel primaire (V1)",
       "La voie dorsale sert à reconnaître les visages"
     ],
@@ -804,7 +804,7 @@ const QUESTIONS = [
     text: "Concernant les paradigmes représentationnalistes, quelle affirmation est correcte ?",
     options: [
       "Ils rejettent tout héritage philosophique dualiste",
-      "Ils sont extrêmement dominants en psychologie et s'appuient (souvent implicitement) sur la métaphore du calcul",
+      "Ils sont extrêmement dominants en psychologie et s'appuient sur la métaphore du calcul",
       "Ils correspondent à la psychologie écologique de Gibson",
       "Ils sont aujourd'hui minoritaires en psychologie cognitive"
     ],
@@ -815,10 +815,10 @@ const QUESTIONS = [
     id: 68, bloc: 4, blocLabel: "4 — Indirecte vs directe",
     text: "Quels sont les formats de représentation mentale listés dans le cours ?",
     options: [
-      "Analogique (ressemble à ce qu'il représente)",
+      "Analogique",
       "Verbal ou linguistique",
       "Propositionnel",
-      "Quantitatif (valeurs numériques)"
+      "Quantitatif"
     ],
     correct: [0, 1, 2],
     feedback: "Trois formats : analogique (à la perception), verbal/linguistique, et propositionnel. Le format « quantitatif » n'appartient pas à cette classification."
@@ -827,7 +827,7 @@ const QUESTIONS = [
     id: 69, bloc: 4, blocLabel: "4 — Indirecte vs directe",
     text: "Que dit le cours du rôle des représentations dans le développement (perspective piagétienne) ?",
     options: [
-      "Les représentations se construisent (apports piagétiens et post-piagétiens)",
+      "Les représentations se construisent",
       "Piaget est un précurseur de l'approche écologique de Gibson",
       "Pour Piaget, les représentations sont innées et fixes",
       "Il y a une abstraction progressive du processus de représentation"
@@ -842,7 +842,7 @@ const QUESTIONS = [
       "La métaphore du calcul en psychologie cognitive",
       "La théorie des géons de Biederman",
       "Les paradigmes piagétiens",
-      "La psychologie écologique (perception directe, couplage perception-action) et les approches dynamiques des coordinations motrices"
+      "La psychologie écologique et les approches dynamiques des coordinations motrices"
     ],
     correct: [3],
     feedback: "Non-représentationnalistes = psychologie écologique de Gibson (perception directe, couplage perception-action) + approches dynamiques. Biederman, Piaget et la métaphore du calcul sont représentationnalistes."
@@ -854,7 +854,7 @@ const QUESTIONS = [
       "La « régression à l'infini » : acquérir des représentations en suppose d'autres, et ainsi de suite",
       "La « désincarnation » : le cerveau y est traité comme un processeur isolé du corps et du monde",
       "Ces critiques visent principalement la perception directe de Gibson",
-      "Selon Rock (1997), la perception indirecte repose sur des perceptions antérieures (chaîne perception-perception)"
+      "Selon Rock (1997), la perception indirecte repose sur des perceptions antérieures"
     ],
     correct: [3, 0, 1],
     feedback: "Rock : indirect = chaîne perception-perception. Critiques DE la perception indirecte : régression à l'infini (acquisition des représentations) et désincarnation (cerveau-ordinateur coupé du corps). Elles ne visent pas Gibson."
@@ -889,7 +889,7 @@ const QUESTIONS = [
     id: 74, bloc: 5, blocLabel: "5 — Indirecte : Biederman & géons",
     text: "Qu'est-ce qu'un géon selon Biederman (1987) ?",
     options: [
-      "Une primitive volumétrique simple (cylindre, cône, brique…) servant à reconnaître les objets",
+      "Une primitive volumétrique simple servant à reconnaître les objets",
       "Une représentation photographique complète de l'objet",
       "Une primitive auditive élémentaire",
       "Une affordance au sens de Gibson"
@@ -913,7 +913,7 @@ const QUESTIONS = [
     id: 76, bloc: 5, blocLabel: "5 — Indirecte : Biederman & géons",
     text: "Comment reconnaît-on une tasse selon la théorie de Biederman ?",
     options: [
-      "En la décomposant en géons (un cylindre pour le corps, un tore pour l'anse) et leurs relations spatiales",
+      "En la décomposant en géons et leurs relations spatiales",
       "La reconnaissance fonctionne depuis la plupart des angles, sauf les angles accidentels",
       "En prélevant directement l'affordance « boire » (Gibson)",
       "En mémorisant une photographie précise de chaque tasse rencontrée"
@@ -940,7 +940,7 @@ const QUESTIONS = [
       "La présence de couleurs vives",
       "L'utilisation de la vision binoculaire",
       "Le fait que l'objet soit familier",
-      "Les « angles accidentels » (points de vue très particuliers masquant la structure)"
+      "Les « angles accidentels »"
     ],
     correct: [3],
     feedback: "Les géons sont reconnaissables depuis la plupart des angles SAUF certains « angles accidentels » très spécifiques où la structure volumétrique n'est plus lisible."
@@ -950,7 +950,7 @@ const QUESTIONS = [
     text: "Que montre l'expérience « Dr. Angry and Mr. Smile » (Schyns & Oliva, 1999) ?",
     options: [
       "Les primitives perceptives ne sont pas fixes : elles dépendent des catégories formées par l'observateur",
-      "La catégorisation d'un visage hybride varie selon l'observateur (et l'échelle spatiale traitée)",
+      "La catégorisation d'un visage hybride varie selon l'observateur",
       "Elle confirme que les géons sont des primitives universelles et fixes",
       "Elle ne concerne que la perception auditive"
     ],
@@ -962,21 +962,21 @@ const QUESTIONS = [
     text: "Pourquoi dit-on que les géons sont « discriminables », et quelle en est la portée ?",
     options: [
       "Cela signifie que deux géons distincts peuvent toujours être confondus",
-      "Ils restent distinguables même en conditions dégradées (occlusion, faible luminosité)",
+      "Ils restent distinguables même en conditions dégradées",
       "Cette idée d'universalité est interrogée par Schyns & Oliva (1999)",
       "Cela rend la reconnaissance robuste même avec une information partielle"
     ],
     correct: [1, 3, 2],
-    feedback: "Discriminables = deux géons restent distinguables même dégradés (occlusion, faible contraste) → reconnaissance robuste même avec une information partielle. Schyns & Oliva (1999) interrogent toutefois la fixité/universalité des primitives. L'idée que deux géons distincts puissent toujours être confondus est contradictoire avec la discriminabilité."
+    feedback: "Discriminables = deux géons restent distinguables même dégradés (occlusion, faible luminosité) → reconnaissance robuste même avec une information partielle. Schyns & Oliva (1999) interrogent toutefois la fixité/universalité des primitives. L'idée que deux géons distincts puissent toujours être confondus contredit la discriminabilité."
   },
   {
     id: 81, bloc: 5, blocLabel: "5 — Indirecte : Biederman & géons",
     text: "À quel grand paradigme la théorie de Biederman appartient-elle ?",
     options: [
-      "Au paradigme écologique de Gibson (perception directe)",
+      "Au paradigme écologique de Gibson",
       "À la théorie de la détection du signal",
       "Au sensualisme de Condillac",
-      "Au paradigme représentationnaliste (perception indirecte)"
+      "Au paradigme représentationnaliste"
     ],
     correct: [3],
     feedback: "Biederman postule des représentations internes (géons) → paradigme représentationnaliste / perception indirecte. C'est l'opposé de l'approche directe de Gibson."
@@ -987,8 +987,8 @@ const QUESTIONS = [
     options: [
       "Rien : deux objets aux mêmes géons sont toujours identiques",
       "La couleur dominante de l'objet uniquement",
-      "Les relations spatiales entre les géons (agencement)",
-      "La structure (configuration) et non seulement la liste des composants"
+      "Les relations spatiales entre les géons",
+      "La structure et non seulement la liste des composants"
     ],
     correct: [2, 3],
     feedback: "La reconnaissance dépend des géons ET de leurs relations spatiales : un même jeu de géons agencé différemment donne des objets différents. La couleur n'est pas le critère central."
@@ -1010,8 +1010,8 @@ const QUESTIONS = [
     text: "Les géons de Biederman sont des primitives…",
     options: [
       "tactiles",
-      "auditives (de la reconnaissance de phonèmes)",
-      "visuelles (de la reconnaissance d'objets)",
+      "auditives",
+      "visuelles",
       "olfactives"
     ],
     correct: [2],
@@ -1021,7 +1021,7 @@ const QUESTIONS = [
     id: 85, bloc: 5, blocLabel: "5 — Indirecte : Biederman & géons",
     text: "Dans l'illusion d'image hybride (Oliva & Schyns), quelles affirmations sont correctes ?",
     options: [
-      "Une image combine des informations à différentes échelles spatiales (hautes vs basses fréquences)",
+      "Une image combine des informations à différentes échelles spatiales",
       "L'interprétation dépend de la distance d'observation et/ou des catégories activées",
       "Cela prouve que la perception est identique quel que soit l'observateur",
       "Cela illustre que la catégorisation peut modifier la perception du même stimulus"
@@ -1074,7 +1074,7 @@ const QUESTIONS = [
       "Le flux optique est une représentation interne reconstruite par le cerveau",
       "On distingue un flux optique global et un flux optique local",
       "C'est le changement des configurations optiques au cours du temps",
-      "Un élément optique peut être décrit par un vecteur (amplitude, direction, sens)"
+      "Un élément optique peut être décrit par un vecteur"
     ],
     correct: [2, 1, 3],
     feedback: "Flux optique = transformation des configurations optiques dans le temps (global/local) ; chaque élément peut être modélisé par un vecteur (amplitude, direction, sens). Pour Gibson, il est directement disponible dans la stimulation, pas reconstruit."
@@ -1083,7 +1083,7 @@ const QUESTIONS = [
     id: 90, bloc: 6, blocLabel: "6 — Directe : Gibson",
     text: "Qu'est-ce qu'un invariant STRUCTURAL ?",
     options: [
-      "Un invariant peu ou pas influencé par le déplacement de l'observateur (permanence : taille, forme)",
+      "Un invariant peu ou pas influencé par le déplacement de l'observateur",
       "Une représentation interne de l'objet",
       "Un invariant dont les valeurs dépendent du déplacement de l'observateur",
       "Le temps restant avant contact avec une cible"
@@ -1119,7 +1119,7 @@ const QUESTIONS = [
     id: 93, bloc: 6, blocLabel: "6 — Directe : Gibson",
     text: "Qu'est-ce qu'une affordance selon Gibson ?",
     options: [
-      "Une possibilité d'action offerte par l'environnement au sujet (dans la relation organisme-environnement)",
+      "Une possibilité d'action offerte par l'environnement au sujet",
       "Une propriété de l'objet seul, indépendante de l'organisme",
       "Une représentation mentale de l'objectif à atteindre",
       "Un géon volumétrique"
@@ -1131,10 +1131,10 @@ const QUESTIONS = [
     id: 94, bloc: 6, blocLabel: "6 — Directe : Gibson",
     text: "Que montre l'étude de Warren (1984) sur la montée d'escaliers ?",
     options: [
-      "Il existe des points critiques biomécaniques et des points optimaux physiologiques (rapportés à L)",
+      "Il existe des points critiques biomécaniques et des points optimaux physiologiques",
       "La hauteur de marche seule (en cm) suffit, indépendamment du corps",
       "Le même escalier peut être montable pour un adulte mais pas pour un enfant",
-      "L'« escaladabilité » dépend d'un rapport entre la hauteur de marche et la dimension du corps (longueur de jambe)"
+      "L'« escaladabilité » dépend d'un rapport entre la hauteur de marche et la dimension du corps"
     ],
     correct: [3, 2, 0],
     feedback: "Warren (1984) : l'escaladabilité est un rapport hauteur de marche / dimension corporelle (point critique ≈.88·L, optimum ≈.25·L) → affordance relative à l'organisme (adulte vs enfant). La hauteur seule ne suffit pas."
@@ -1144,7 +1144,7 @@ const QUESTIONS = [
     text: "Qu'est-ce qu'une « loi de contrôle » dans l'approche de Gibson ?",
     options: [
       "Une règle nécessitant une représentation mentale préalable de l'objectif",
-      "Une règle liant directement une variable perceptive (information) et des forces/action",
+      "Une règle liant directement une variable perceptive et des forces/action",
       "Ex. : maintenir τ constant lors de l'approche pour un contact en douceur",
       "Une loi purement linguistique sans lien avec l'action"
     ],
@@ -1169,7 +1169,7 @@ const QUESTIONS = [
     options: [
       "Ils s'inscrivent dans le couplage perception-action de Gibson",
       "Ils prouvent que la course ne dépend d'aucune information visuelle",
-      "Ils illustrent les lois de contrôle reliant information optique et forces (impulsion)",
+      "Ils illustrent les lois de contrôle reliant information optique et forces",
       "Le contrôle visuel régule la longueur des pas/foulées"
     ],
     correct: [3, 2, 0],
@@ -1179,9 +1179,9 @@ const QUESTIONS = [
     id: 98, bloc: 6, blocLabel: "6 — Directe : Gibson",
     text: "Chez Gibson, quelle est la différence entre « invariant » et « information » ?",
     options: [
-      "L'invariant est une propriété du flux optique (support informationnel potentiel)",
+      "L'invariant est une propriété du flux optique",
       "L'information est totalement indépendante du couplage sujet-environnement",
-      "L'information est le statut que prend l'invariant lorsqu'il est détecté (état du couplage sujet-environnement)",
+      "L'information est le statut que prend l'invariant lorsqu'il est détecté",
       "L'invariant est une représentation stockée en mémoire à long terme"
     ],
     correct: [0, 2],
@@ -1204,12 +1204,12 @@ const QUESTIONS = [
     text: "Quelle est une limite majeure de l'approche gibsonienne ?",
     options: [
       "Elle suppose des représentations internes riches",
-      "Elle est difficile à formaliser sur le plan computationnel (comment modéliser une affordance ?)",
+      "Elle est difficile à formaliser sur le plan computationnel",
       "Elle ne s'applique qu'aux animaux non-humains",
       "Elle nie totalement l'existence du cerveau"
     ],
     correct: [1],
-    feedback: "Gibson est difficile à formaliser computationnellement (comment modéliser les affordances ?) et peine dans des environnements appauvris (brouillard, laboratoire). En revanche, il ne nie pas le cerveau, s'applique aux humains, et REFUSE justement les représentations internes riches."
+    feedback: "Gibson est difficile à formaliser computationnellement (comment modéliser une affordance ?) et peine dans des environnements appauvris (brouillard, laboratoire). En revanche, il ne nie pas le cerveau, s'applique aux humains, et refuse justement les représentations internes riches."
   },
   {
     id: 101, bloc: 6, blocLabel: "6 — Directe : Gibson",
@@ -1241,9 +1241,9 @@ const QUESTIONS = [
     id: 103, bloc: 7, blocLabel: "7 — Expertise & perception catégorielle",
     text: "Concernant les « chunks » dans l'expertise (ex. les échecs), quelles affirmations sont correctes ?",
     options: [
-      "Les experts perçoivent des structures (configurations) que les novices ne voient pas",
+      "Les experts perçoivent des structures que les novices ne voient pas",
       "On estime 50 000 à 300 000 chunks en MLT chez les experts aux échecs",
-      "Dans les milieux à espace continu, le nombre de chunks pose problème (potentiellement infini)",
+      "Dans les milieux à espace continu, le nombre de chunks pose problème",
       "Les chunks correspondent à une mémorisation pièce par pièce, sans structure"
     ],
     correct: [1, 0, 2],
@@ -1255,7 +1255,7 @@ const QUESTIONS = [
     options: [
       "L'oubli total du rôle de la mémoire à long terme",
       "La surestimation systématique du nombre de chunks",
-      "La négligence de la rationalité limitée (l'expert n'est pas une machine optimale)",
+      "La négligence de la rationalité limitée",
       "La désincarnation : l'expertise est traitée comme une base de connaissances externe aux processus corporels"
     ],
     correct: [2, 3],
@@ -1289,8 +1289,8 @@ const QUESTIONS = [
     id: 107, bloc: 7, blocLabel: "7 — Expertise & perception catégorielle",
     text: "L'idée que « les experts perçoivent des structures que les novices ne perçoivent pas » est illustrée par…",
     options: [
-      "Le sexage de poussins chez certaines volailles (Biederman & Shiffrar, 1987)",
-      "La radiologie (Sowden, Davies & Roling, 2000)",
+      "Le sexage de poussins chez certaines volailles",
+      "La radiologie",
       "Le fait que l'expertise soit purement innée",
       "L'incapacité totale des experts à apprendre de nouvelles catégories"
     ],
@@ -1338,7 +1338,7 @@ const QUESTIONS = [
     text: "Que montre l'expérience de Lisker & Abramson (1970) sur le Voice Onset Time (VOT) ?",
     options: [
       "Le VOT varie de façon physiquement continue, mais on perçoit /b/ et /p/ comme deux catégories nettes",
-      "Un changement physique continu produit un changement perceptif abrupt (non-linéaire)",
+      "Un changement physique continu produit un changement perceptif abrupt",
       "Les phonèmes sont perçus de façon strictement continue, sans frontière",
       "Le VOT ne concerne que la vision des couleurs"
     ],
@@ -1361,10 +1361,10 @@ const QUESTIONS = [
     id: 113, bloc: 7, blocLabel: "7 — Expertise & perception catégorielle",
     text: "La perception catégorielle peut-elle s'acquérir ? Quels éléments l'illustrent ?",
     options: [
-      "Elle est en partie innée (ex. couleurs) mais aussi acquise",
+      "Elle est en partie innée mais aussi acquise",
       "Elle est entièrement innée et ne peut jamais être apprise",
       "La perception catégorielle des phonèmes est en partie spécifique à la culture/langue",
-      "Oui : par apprentissage de catégories arbitraires sur des figures géométriques (Goldstone, 1994)"
+      "Oui : par apprentissage de catégories arbitraires sur des figures géométriques"
     ],
     correct: [3, 2, 0],
     feedback: "La perception catégorielle est en partie innée (ex. couleurs) ET acquise : apprentissage de catégories arbitraires sur figures géométriques (Goldstone, 1994) ; perception des phonèmes en partie spécifique à la langue maternelle. L'idée qu'elle serait entièrement innée et jamais apprise est donc fausse."
@@ -1398,7 +1398,7 @@ const QUESTIONS = [
     text: "Selon le cours, quel est le lien entre perception catégorielle et cognition ?",
     options: [
       "Perception et conception sont totalement séparées, sans aucun échange",
-      "Elle implique à la fois des processus de bas niveau (perception) et de haut niveau (concepts)",
+      "Elle implique à la fois des processus de bas niveau et de haut niveau",
       "Elle ne concerne que la mémoire",
       "Seuls les concepts influencent la perception, jamais l'inverse"
     ],
@@ -1413,7 +1413,7 @@ const QUESTIONS = [
     options: [
       "La théorie trichromatique de la couleur",
       "La doctrine des énergies nerveuses spécifiques",
-      "Une approche évolutionniste (phylogénétique) du jugement perceptif",
+      "Une approche évolutionniste du jugement perceptif",
       "La psychophysique classique des seuils absolus"
     ],
     correct: [2],
@@ -1423,7 +1423,7 @@ const QUESTIONS = [
     id: 118, bloc: 8, blocLabel: "8 — Phylogenèse & Proffitt",
     text: "Selon Proffitt (2006), « la perception visuelle n'est pas un processus purement visuel ». Qu'implique cette idée ?",
     options: [
-      "Les perceptions sont incarnées (embodied)",
+      "Les perceptions sont incarnées",
       "La perception ne dépend que de l'information optique et oculomotrice",
       "Elles relient le corps et les buts aux opportunités et aux coûts de l'action",
       "Ce que l'on voit dépend aussi des buts, de l'état physiologique et des émotions"
@@ -1460,7 +1460,7 @@ const QUESTIONS = [
     text: "Qu'observe-t-on dans les jugements d'inclinaison de pente (Proffitt et al., 1995) ?",
     options: [
       "Les pentes sont systématiquement sous-estimées",
-      "Les pentes sont systématiquement surestimées (une pente de 5° est perçue bien plus raide, ~20°)",
+      "Les pentes sont systématiquement surestimées",
       "Les pentes sont jugées avec une précision parfaite",
       "Seules les pentes supérieures à 45° sont surestimées"
     ],
@@ -1471,10 +1471,10 @@ const QUESTIONS = [
     id: 122, bloc: 8, blocLabel: "8 — Phylogenèse & Proffitt",
     text: "Dans les expériences de Proffitt, quelles modalités de jugement surestiment fortement, et laquelle reste précise ?",
     options: [
-      "Les modalités VISUELLE et VERBALE surestiment fortement (jugements « explicites », conscients)",
+      "Les modalités VISUELLE et VERBALE surestiment fortement",
       "La modalité visuelle est la plus précise des trois",
       "La modalité haptique surestime davantage que la visuelle et la verbale",
-      "La modalité HAPTIQUE (mise en correspondance manuelle/visuomotrice) reste relativement précise"
+      "La modalité HAPTIQUE reste relativement précise"
     ],
     correct: [0, 3],
     feedback: "Point clé : ce sont les mesures VISUELLE et VERBALE (conscience explicite) qui surestiment fortement, tandis que la mesure HAPTIQUE (action guidée, voie dorsale) reste précise — d'où la dissociation entre conscience explicite et actions guidées visuellement."
@@ -1533,7 +1533,7 @@ const QUESTIONS = [
     options: [
       "La dissociation entre voie magnocellulaire et parvocellulaire",
       "La dissociation entre cônes et bâtonnets",
-      "La dissociation entre conscience explicite (visuel/verbal, déformée) et actions guidées visuellement (précises)",
+      "La dissociation entre conscience explicite et actions guidées visuellement",
       "La dissociation entre seuil absolu et seuil différentiel"
     ],
     correct: [2],
@@ -1596,7 +1596,7 @@ const QUESTIONS = [
       "un phénomène strictement identique à une saccade oculaire",
       "une simple décision consciente et volontaire",
       "un processus totalement indépendant des besoins de l'organisme",
-      "une fonction du niveau de satisfaction des besoins (et de la perception des possibilités de les satisfaire)"
+      "une fonction du niveau de satisfaction des besoins"
     ],
     correct: [3],
     feedback: "Laurent & Vandel (2016) : l'humeur (et sa régulation) serait une fonction du niveau de satisfaction des besoins — élémentaires (alimentation, sécurité, sommeil) ou élaborés (affiliation, estime de soi…) — et de la perception des possibilités d'y répondre."
@@ -1605,9 +1605,9 @@ const QUESTIONS = [
     id: 133, bloc: 9, blocLabel: "9 — Processus affectifs",
     text: "Que montre l'étude de Changizi & Hall (2001) sur la soif ?",
     options: [
-      "Les participants déshydratés ont une plus grande propension à percevoir la transparence (l'« eau »)",
+      "Les participants déshydratés ont une plus grande propension à percevoir la transparence",
       "Un état appétitif modifie l'utilité de certaines dimensions du stimulus et biaise la perception",
-      "Mieux vaut percevoir par erreur une source d'eau absente que rater une source d'eau présente (logique utilitaire)",
+      "Mieux vaut percevoir par erreur une source d'eau absente que rater une source d'eau présente",
       "La soif n'a aucun effet sur la perception visuelle"
     ],
     correct: [0, 1, 2],
@@ -1641,13 +1641,13 @@ const QUESTIONS = [
     id: 136, bloc: 9, blocLabel: "9 — Processus affectifs",
     text: "Que montre l'étude de Laurent & Bianchi (2010) sur la soif et une publicité ?",
     options: [
-      "La persuasivité d'une pub pour une boisson (prix jugé adéquat, probabilité d'achat) dépend du niveau d'hydratation/soif",
+      "La persuasivité d'une pub pour une boisson dépend du niveau d'hydratation/soif",
       "L'effet ne concerne que les stimuli sonores",
       "La valence hédonique positive dépend de la congruence entre besoin hydrique et nature de la boisson proposée",
       "La soif n'a aucun effet sur l'évaluation des publicités"
     ],
     correct: [2, 0],
-    feedback: "Laurent & Bianchi (2010) : après ingestion de chips (déshydratation), une pub Coca-Cola est jugée plus persuasive ; valence et persuasivité dépendent de la congruence besoin hydrique / proposition (sensibilité physiologique aux messages). C et"
+    feedback: "Laurent & Bianchi (2010) : après ingestion de chips (déshydratation), une pub Coca-Cola est jugée plus persuasive ; valence et persuasivité dépendent de la congruence besoin hydrique / proposition (sensibilité physiologique aux messages). C et."
   },
   {
     id: 137, bloc: 9, blocLabel: "9 — Processus affectifs",
@@ -1667,8 +1667,8 @@ const QUESTIONS = [
     options: [
       "L'humeur n'a aucun effet sur le style de traitement visuel",
       "L'induction d'humeur se faisait par un récit d'événement positif ou négatif",
-      "Une humeur négative favorise un traitement local (focalisation sur les détails)",
-      "Une humeur positive favorise un traitement global (vision d'ensemble)"
+      "Une humeur négative favorise un traitement local",
+      "Une humeur positive favorise un traitement global"
     ],
     correct: [3, 2, 1],
     feedback: "Gasper & Clore (2002) : induction par récit, puis reproduction sérielle de dessins (paradigme de Bartlett) et jugement de similarité de figures hiérarchiques (Kimchi & Palmer) → humeur positive = global, humeur négative = local."
@@ -1677,10 +1677,10 @@ const QUESTIONS = [
     id: 139, bloc: 9, blocLabel: "9 — Processus affectifs",
     text: "Le cours présente deux théories des relations humeur-cognition. Lesquelles ?",
     options: [
-      "La théorie de la contingence hédonique (Wegener & Petty, 1994)",
-      "La théorie trichromatique (Young-Helmholtz)",
+      "La théorie de la contingence hédonique",
+      "La théorie trichromatique",
       "La doctrine des énergies nerveuses spécifiques (Müller)",
-      "La théorie de l'affect-en-tant-qu'information (Clore et al., 2001)"
+      "La théorie de l'affect-en-tant-qu'information"
     ],
     correct: [3, 0],
     feedback: "Deux théories des relations humeur-cognition : affect-en-tant-qu'information (Clore et al., 2001) et contingence hédonique (Wegener & Petty, 1994). Young-Helmholtz et Müller relèvent d'autres chapitres."
@@ -1713,9 +1713,9 @@ const QUESTIONS = [
     id: 142, bloc: 9, blocLabel: "9 — Processus affectifs",
     text: "Selon le cours, quels facteurs « coût » influencent l'estimation perceptive d'une action envisagée ?",
     options: [
-      "La peur liée à l'action (ex. Stefanucci et al., 2008)",
+      "La peur liée à l'action",
       "La couleur des yeux de l'observateur",
-      "L'effort à consentir (ex. Witt et al., 2004)",
+      "L'effort à consentir",
       "Le nombre de nerfs crâniens"
     ],
     correct: [0, 2],
@@ -1728,7 +1728,7 @@ const QUESTIONS = [
       "Cela mesure uniquement l'acuité visuelle",
       "Cela illustre que la perception intègre les capacités d'action du sujet",
       "À juger si l'on peut passer par une ouverture compte tenu des dimensions de son corps",
-      "C'est un jugement de type affordance (relation corps-environnement)"
+      "C'est un jugement de type affordance"
     ],
     correct: [2, 3, 1],
     feedback: "Passabilité (Warren & Whang, 1987) : juger si une ouverture est franchissable selon la largeur de ses épaules → jugement d'affordance (relation corps-environnement). Ce n'est pas une mesure d'acuité."
@@ -1762,9 +1762,9 @@ const QUESTIONS = [
     text: "Quel lien unit les processus affectifs (ch. 9) et la théorie de Proffitt (ch. 8) ?",
     options: [
       "Tous deux réduisent la perception à la seule information rétinienne",
-      "Tous deux montrent que des facteurs non optiques (état interne, affect, social) modulent la perception",
+      "Tous deux montrent que des facteurs non optiques modulent la perception",
       "Tous deux nient que l'état du corps influence la perception",
-      "Tous deux relèvent d'une logique d'« économie de l'action » (coûts/possibilités)"
+      "Tous deux relèvent d'une logique d'« économie de l'action »"
     ],
     correct: [1, 3],
     feedback: "Processus affectifs et théorie de Proffitt convergent : des facteurs non optiques (état physiologique, humeur, support social) modulent la perception, dans une logique d'économie de l'action (couplage coûts/possibilités). C et D contredisent les deux approches."
@@ -1788,7 +1788,7 @@ const QUESTIONS = [
     text: "Concernant l'étude des mouvements oculaires dans les maladies, quelles affirmations sont correctes ?",
     options: [
       "Les mouvements oculaires peuvent constituer des marqueurs potentiels d'une maladie",
-      "Les saccades sont en grande partie automatiques (non entièrement volontaires)",
+      "Les saccades sont en grande partie automatiques",
       "Certaines maladies modifient de façon caractéristique les patterns d'exploration visuelle",
       "Les patterns oculaires des patients sont toujours identiques à ceux des personnes saines"
     ],
@@ -1883,7 +1883,7 @@ const QUESTIONS = [
     id: 156, bloc: 10, blocLabel: "10 — Maladies & mouvements oculaires",
     text: "En quoi le chapitre 10 illustre-t-il les objectifs « cliniques » du cours ?",
     options: [
-      "Il articule perception et processus pathologiques (Alzheimer, dépression)",
+      "Il articule perception et processus pathologiques",
       "Il se limite à l'anatomie de l'œil",
       "Il démontre que la perception n'a aucun intérêt clinique",
       "Il ouvre sur des perspectives de caractérisation, voire thérapeutiques"
@@ -1898,7 +1898,7 @@ const QUESTIONS = [
     text: "Qu'est-ce que la loi de Ricco ?",
     options: [
       "Quand l'énergie augmente, la lumière rouge est perçue plus jaune",
-      "Pour de petites surfaces de lumière, l'intensité (radiance) requise pour la détection est inversement proportionnelle à la surface, lorsque la durée d'exposition est fixe",
+      "Pour de petites surfaces de lumière, l'intensité requise pour la détection est inversement proportionnelle à la surface, lorsque la durée d'exposition est fixe",
       "L'intensité requise est inversement proportionnelle à la durée d'exposition, lorsque la surface est fixe",
       "La sensation croît comme le logarithme de l'intensité du stimulus"
     ],
@@ -1958,9 +1958,9 @@ const QUESTIONS = [
     text: "Quels sont les deux grands facteurs originellement identifiés comme influençant une décision (TDS) ?",
     options: [
       "La longueur d'onde du stimulus",
-      "La sensibilité (capacité à discerner correctement le signal du bruit)",
+      "La sensibilité",
       "Le nombre de paires de nerfs crâniens",
-      "Le critère de décision (seuil interne, biais de réponse)"
+      "Le critère de décision"
     ],
     correct: [1, 3],
     feedback: "Deux facteurs : la SENSIBILITÉ (mesurée par d') et le CRITÈRE de décision (β). La sensibilité = capacité à discriminer ; le critère = stratégie/biais de réponse, indépendant de d'."
@@ -1984,7 +1984,7 @@ const QUESTIONS = [
       "S = la sensation",
       "k désigne le niveau d'activité résiduelle interne de l'organe sensoriel",
       "La sensation croît de façon logarithmique : il y a « compression » aux fortes intensités",
-      "R = l'intensité (magnitude) du stimulus (de l'allemand « Reiz »)"
+      "R = l'intensité du stimulus"
     ],
     correct: [0, 3, 2],
     feedback: "Fechner : S = sensation, R = intensité (Reiz), k = constante ; croissance logarithmique (compression). Le niveau d'activité résiduelle interne (c) est le terme propre à DELBOEUF, pas à Fechner."
@@ -1994,7 +1994,7 @@ const QUESTIONS = [
     text: "Dans la formule de Delboeuf s = k × log[(c + δ)/c], que représente « c » ?",
     options: [
       "L'intensité du stimulus externe",
-      "Le niveau intrinsèque d'activité de l'organe sensoriel (équivalent à un stimulus interne)",
+      "Le niveau intrinsèque d'activité de l'organe sensoriel",
       "La constante de Weber ΔI/I₀",
       "Le pourcentage de détection au seuil"
     ],
@@ -2006,7 +2006,7 @@ const QUESTIONS = [
     text: "Quelle est la place de la perception dans l'histoire de la psychologie ?",
     options: [
       "Elle a été relativement marginalisée avec le cognitivisme et la métaphore du calcul",
-      "Elle fut fondatrice : objet d'étude du premier laboratoire de psychologie (Wundt, 1879)",
+      "Elle fut fondatrice : objet d'étude du premier laboratoire de psychologie",
       "La robotique et l'IA tendent aujourd'hui à lui redonner de l'importance",
       "Elle n'a jamais eu de rôle en psychologie expérimentale"
     ],
@@ -2041,9 +2041,9 @@ const QUESTIONS = [
     id: 169, bloc: 11, blocLabel: "📝 Examen — type prof",
     text: "Sur quelle base von Helmholtz distingue-t-il sensation et perception ?",
     options: [
-      "La perception = la formation d'une représentation d'un objet extérieur (intégration)",
+      "La perception = la formation d'une représentation d'un objet extérieur",
       "Reconnaître le son d'un violon est un acte de perception",
-      "La sensation = des états particuliers du corps (appareils nerveux)",
+      "La sensation = des états particuliers du corps",
       "Décomposer un son complexe en sons partiels est un acte de perception"
     ],
     correct: [2, 0, 1],
@@ -2067,7 +2067,7 @@ const QUESTIONS = [
     options: [
       "Le rapport ΔI / I₀",
       "La distance entre les distributions « bruit » et « signal + bruit »",
-      "Une courbe (en ogive) du pourcentage de détection en fonction de l'intensité du stimulus",
+      "Une courbe du pourcentage de détection en fonction de l'intensité du stimulus",
       "Le nombre de chunks stockés en mémoire à long terme"
     ],
     correct: [2],
@@ -2104,7 +2104,7 @@ const QUESTIONS = [
       "Des règles de classification des couleurs en catégories",
       "Des lois décrivant la compression logarithmique de la sensation",
       "Des règles nécessitant une représentation mentale préalable de l'objectif",
-      "Des lois qui formalisent les relations entre informations (perceptives) et forces"
+      "Des lois qui formalisent les relations entre informations et forces"
     ],
     correct: [3],
     feedback: "Lois de contrôle = relations DIRECTES information ↔ forces (ex. maintenir τ constant → contact en douceur), sans représentation interne. Elles incarnent le couplage perception-action."
@@ -2150,8 +2150,8 @@ const QUESTIONS = [
     text: "Que peut générer, sur le plan cognitif, une lésion du lobe temporal (voie ventrale) ?",
     options: [
       "Une simultagnosie",
-      "Une agnosie visuelle associative (le patient voit mais ne reconnaît plus les objets)",
-      "Une prosopagnosie (trouble de la reconnaissance des visages)",
+      "Une agnosie visuelle associative",
+      "Une prosopagnosie",
       "Une ataxie optique"
     ],
     correct: [1, 2],
@@ -2161,8 +2161,8 @@ const QUESTIONS = [
     id: 179, bloc: 11, blocLabel: "📝 Examen — type prof",
     text: "Que peut générer, sur le plan cognitif, une lésion du cortex pariétal postérieur (voie dorsale) ?",
     options: [
-      "Une simultagnosie (incapacité à percevoir plusieurs objets simultanément)",
-      "Une ataxie optique (erreurs d'orientation/direction de la main vers une cible dans le champ contralatéral)",
+      "Une simultagnosie",
+      "Une ataxie optique",
       "Une agnosie visuelle associative",
       "Une prosopagnosie"
     ],
@@ -2176,7 +2176,7 @@ const QUESTIONS = [
       "4 couches : 2 magnocellulaires et 2 parvocellulaires",
       "2 couches magnocellulaires uniquement",
       "6 couches : 4 magnocellulaires et 2 parvocellulaires",
-      "6 couches : 2 magnocellulaires (couches 1-2) et 4 parvocellulaires (couches 3-6)"
+      "6 couches : 2 magnocellulaires et 4 parvocellulaires"
     ],
     correct: [3],
     feedback: "CGL (thalamus) : 6 couches — 2 magnocellulaires (1-2 : mouvement/contraste) et 4 parvocellulaires (3-6 : couleur/détails fins)."
@@ -2197,9 +2197,9 @@ const QUESTIONS = [
     id: 182, bloc: 11, blocLabel: "📝 Examen — type prof",
     text: "La perception catégorielle peut-elle être acquise ?",
     options: [
-      "Oui : même si elle est en partie innée (ex. couleurs), elle peut aussi s'acquérir",
+      "Oui : même si elle est en partie innée, elle peut aussi s'acquérir",
       "Non : elle est entièrement innée",
-      "Oui : celle des phonèmes est en partie spécifique à la culture (un son perçu « Pa » par des anglo-saxons, « Pha » par des thaïlandais)",
+      "Oui : celle des phonèmes est en partie spécifique à la culture",
       "Non : elle ne concerne que la vision des couleurs"
     ],
     correct: [0, 2],
@@ -2209,9 +2209,9 @@ const QUESTIONS = [
     id: 183, bloc: 11, blocLabel: "📝 Examen — type prof",
     text: "Quels cas illustrent l'ACQUISITION de la perception catégorielle ?",
     options: [
-      "L'apprentissage de catégories arbitraires appliquées à des figures géométriques (Goldstone, 1994)",
+      "L'apprentissage de catégories arbitraires appliquées à des figures géométriques",
       "La diffusion de Rayleigh",
-      "La perception catégorielle des phonèmes (spécifique à la langue/culture)",
+      "La perception catégorielle des phonèmes",
       "La loi de Bloch"
     ],
     correct: [0, 2],
@@ -2234,9 +2234,9 @@ const QUESTIONS = [
     text: "Comment s'explique la divergence entre les modalités de jugement des pentes (visuelle/verbale vs haptique) chez Proffitt ?",
     options: [
       "Le jugement verbal est précis et totalement insensible à la fatigue",
-      "La mesure haptique (action guidée) reste relativement précise",
+      "La mesure haptique reste relativement précise",
       "La mesure haptique est la plus déformée des trois",
-      "Les jugements explicites (visuel et verbal) surestiment car ils intègrent l'anticipation des coûts de l'action"
+      "Les jugements explicites surestiment car ils intègrent l'anticipation des coûts de l'action"
     ],
     correct: [3, 1],
     feedback: "Dissociation conscience explicite / action : les mesures VISUELLE et VERBALE surestiment (perméables aux coûts anticipés de l'action), tandis que la mesure HAPTIQUE (visuomotrice, voie dorsale) reste relativement précise. La mesure haptique n'est donc PAS la plus déformée — c'est l'inverse."
@@ -2251,6 +2251,6 @@ const QUESTIONS = [
       "Les différences entre objets de catégories différentes sont accentuées"
     ],
     correct: [3, 2],
-    feedback: "Deux effets : accentuation des différences ENTRE catégories + minimisation des différences AU SEIN d'une catégorie (un changement physique linéaire produit un changement perceptif non-linéaire). C inverse l'effet ;"
+    feedback: "Deux effets : accentuation des différences ENTRE catégories + minimisation des différences AU SEIN d'une catégorie (un changement physique linéaire produit un changement perceptif non-linéaire). C inverse l'effet ;."
   }
 ];
